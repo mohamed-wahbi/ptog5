@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>*{
+    padding: 0px;
+    margin: 0px;
+}
+#player{
+width: 360px;
+background: #2e3030;
+border-radius: 30px;
+position: absolute;
+left: 50%;
+transform: translate(-50%);
+}
+#headar{
+    height: 170px;
+}
+#icon{    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    transform: translate(3px, 4px);
+}
+#title{    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    font-family: math;}
+#paragraf{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #d09ac4cc;
+        font-size: 15px;
+        font-family: monospace;
+    }
+#mohtawa{  
+      height: 656px;
+    background: #bf279642;
+  }   
+  #fles{
+       width: 100%;
+    height: 150px;
+    background: #b28a8a87;    width: 100%;
+    height: 150px;
+    background: #b28a8a87;
+    display: flex;
+    justify-content: center;
+    align-items: center;    justify-content: center;
+    align-items: center;
+    display: list-item;    margin-top: 25px;    margin-top: 85px;} 
+    #btn{    width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin: 10px;
+    
+        border: 0px;}
+        #btn_player{    width: 53px;
+            height: 53px;
+            border-radius: 50%;
+            margin: 10px;
+         
+            border: 0px;}
+            #btna{
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                margin: 10px;
+                
+                border: 0px;
+            }
+ #fot{    width: 100%;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;}
+    #fot img{
+        height: 100px;
+    width: 100px;
+    
+    }
+    #rad{
+        width: 100%;
+        height: 65px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+ #nas{color: white;margin-bottom: 18px;}</style>
+</head>
+<body>
+
+<div id="player">
+<div id="headar" >
+    <div id="icon"><img style="width: 80px;height: 75px;" src="AA.png" alt=""></div>
+    <div id="title">Music</div>
+    <div id="paragraf">Music Player App WS</div> 
+</div>
+<div style="display: flex;justify-content: center;align-items: center;">
+    <main id="foto" >
+
+    </main>
+</div>
+<div id="mohtawa">
+  
+    <div id="fot"><img id="image" src="" alt=""></div>
+    <div id="rad"><h1 id="nas" ></h1></div>
+ <div id="fles">
+     <div style="display: flex; justify-content: center;align-items: center;    display: flex;
+     justify-content: center;
+     align-items: center;
+     padding-top: 15px;
+     width: 100%;"><input type="range" name="" id="glis" style="    -webkit-appearance: none;
+    width: 90%;
+    height: 3px;
+    margin-bottom: 13px;"></div>
+     <div style="display: flex;justify-content: center;align-items: center;"><h3 style="color: white;
+    margin-bottom: 5px;">VOLUME</h3></div>
+    <div style="display: flex;justify-content: center;align-items: center;"><img id="btn" src="BB.png" alt="">
+        <img id="btn_player" src="DD.png" alt="">
+        <img id="btna" src="CC.png" alt="">
+        <audio src="ABC.mp3" id="ghoneya" ></audio></div> 
+    </div>
+</div>
+
+ 
+
+
+
+</div>
+
+
+
+    <script src="project5.js">class Play  {
+        constructor(){
+    var toul = document.getElementById("player");
+    toul.style.height=screen.height + "px";
+    if(screen.width<650){
+        toul.style.width=screen.width+"px";
+    }
+    var mohtawa=document.getElementById("mohtawa");
+    mohtawa.style.height=screen.height-205+"px";
+    
+    
+    
+        }
+    }
+    onload=new Play();
+    class Mouchaghel {
+        constructor(){
+            this.ghoneya = document.getElementById("ghoneya");
+            this.nas = document.getElementById("nas");
+            this.control_button = document.getElementById("btn_player");
+            this.image=document.getElementById("image");
+            this.isPlayed;
+            this.control_button.addEventListener("click",()=>{
+    this.pp();
+            })
+            this.radioun =[]
+            this.radioun[0]="RADIOUN1 Zitouna Fm"
+            this.radioun[1]="RADIOUN2 Mozaik Fm"
+            this.radioun[2]="RADIOUN3 oxigen Fm"
+            this.tsawer=[]
+            this.tsawer[0]="Z.jpg"
+            this.tsawer[1]="M.jfif"
+            this.tsawer[2]="O.jfif"
+            this.ghneyet=[]
+            this.ghneyet[0]="https://zitounafm.toutech.net/zitounalive"
+            this.ghneyet[1]="https://radio.mosaiquefm.net/mosalive"
+            this.ghneyet[2]="https://radiooxygenefm.ice.infomaniak.ch/radiooxygenefm-64.mp3"
+            this.nidham=0;
+            this.thdid();
+            document.getElementById("btna").addEventListener("click",()=>{
+                if(this.nidham<this.ghneyet.length-1){
+                    ++this.nidham;this.isPlayed=false;
+                }
+               this.thdid()
+                
+            })
+            document.getElementById("btn").addEventListener("click",()=>{
+                if(this.nidham>0){
+                    --this.nidham;this.isPlayed=false;
+                }
+                this.thdid();
+            })
+        };
+        thdid(){ 
+            this.ghoneya.src =this.ghneyet[this.nidham];
+            this.nas.innerHTML=this.radioun[this.nidham];
+            this.image.src=this.tsawer[this.nidham];
+            this.pp();
+        }
+    
+        
+        
+        pp(){
+            if(this.isPlayed==false){
+                this.control_button.src="EE.jpg";
+                this.ghoneya.play();
+                this.isPlayed=true;
+            }
+            else{
+                this.control_button.src="DD.png";
+                this.ghoneya.pause();
+                this.isPlayed=false;
+            }
+    
+        }
+    }
+    onload = new Mouchaghel();</script>
+    <script src="volum.js">class Volumee {
+        constructor(){
+            
+            this.ghoneya=document.getElementById("ghoneya");
+            this.ghoneya.volume=50/100;
+    
+            this.glis =document.getElementById("glis");
+            this.glis.addEventListener("change",()=>{
+                this.ghoneya.volume=this.glis.value/100;
+            });
+    
+        }
+    }
+    onload=new Volumee();</script>
+</body>
+</html>
